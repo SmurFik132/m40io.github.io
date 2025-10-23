@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Найдите наш канал — введите название сайта</title>
+  <meta name="description" content="Простой лендинг: одна кнопка — переход в Telegram-канал." />
+  <meta name="theme-color" content="#ffffff" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Найдите наш канал" />
+  <meta property="og:description" content="Перейдите в наш Telegram-канал для подробностей." />
+  <meta property="og:type" content="website" />
+
+  <style>
+    /* Минималистичный мобильный дизайн */
+    :root{
+      --bg:#ffffff;
+      --card:#f7f7f8;
+      --accent:#0066ff;
+      --accent-2:#0050d4;
+      --text:#0b1220;
+      --muted:#6b7280;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    html,body{height:100%;}
+    body{
+      margin:0;
+      background:linear-gradient(180deg,var(--bg) 0%, #fbfdff 100%);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+    }
+    .card{
+      width:100%;
+      max-width:520px;
+      background:var(--card);
+      border-radius:18px;
+      box-shadow:0 6px 30px rgba(9,10,18,0.06);
+      padding:28px;
+      text-align:center;
+    }
+    .brand{
+      font-weight:700;
+      font-size:18px;
+      letter-spacing:0.2px;
+      margin-bottom:8px;
+    }
+    .headline{
+      font-size:20px;
+      margin:6px 0 18px 0;
+    }
+    .sub{
+      color:var(--muted);
+      font-size:14px;
+      margin-bottom:22px;
+    }
+    .cta{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      text-decoration:none;
+      padding:14px 22px;
+      font-weight:600;
+      font-size:16px;
+      border-radius:12px;
+      background:linear-gradient(180deg,var(--accent),var(--accent-2));
+      color:white;
+      box-shadow:0 6px 18px rgba(3,102,214,0.18);
+      transition:transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+    }
+    .cta:active{transform:translateY(1px) scale(.998);}
+    .small{font-size:12px;color:var(--muted);margin-top:16px}
+
+    /* For accessibility focus */
+    .cta:focus{outline:3px solid rgba(0,102,255,0.14); outline-offset:3px}
+
+    /* Tiny Telegram icon (inline SVG) */
+    .tg-icon{width:18px;height:18px;display:inline-block;vertical-align:middle}
+
+    @media (max-width:420px){
+      .card{padding:20px;border-radius:14px}
+      .headline{font-size:18px}
+      .brand{font-size:16px}
+    }
+  </style>
+</head>
+<body>
+  <main class="card" role="main">
+    <div class="brand">Тот самый канал с темками</div>
+    <h1 class="headline">Обучаем с нуля</h1>
+    <p class="sub">Откройте наш канал в Telegram для дальнейших инструкций.</p>
+
+    <!-- CTA button: ссылка ведёт в Telegram -->
+    <a class="cta" href="https://t.me/+8u1jEOYPdto1MTQ1" target="_blank" rel="noopener noreferrer" aria-label="Перейти в Telegram-канал">
+      <svg class="tg-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M22 3L2 12.5L7.5 15L9 20L12.5 13.5L22 3Z" fill="white" />
+      </svg>
+      Перейти в Telegram
+    </a>
+
+    <div class="small">Если кнопка не открывается — попробуйте на мобильном устройстве или скопируйте ссылку: <br><code>t.me/+8u1jEOYPdto1MTQ1</code></div>
+  </main>
+
+  <!-- Небольшой скрипт: при первом заходе на мобильных можно показать подсказку (опционально) -->
+  <script>
+    (function(){
+      try{
+        var isMobile = /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        if(isMobile){
+          // ничего навязчивого — просто оставляем на странице
+        }
+      }catch(e){/* silent */}
+    })();
+  </script>
+</body>
+</html>
